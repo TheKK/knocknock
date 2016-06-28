@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from pprint import pprint
+
+from termcolor import colored
+
+import targetPages
+
+accounts_to_test = ['katia_managon', 'theCryingCat']
+
+for page in targetPages.all_pages:
+    result = page.check_result(accounts_to_test)
+    print('')
+    print(page.site_name)
+    print('=====')
+    for r in result:
+        text = "%s: %s" % (
+                r[0],
+                colored('True', 'green') if r[1] else colored('False', 'red'))
+
+        print(text)
