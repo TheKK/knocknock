@@ -23,15 +23,25 @@ relationship with someone that I DO NOT CARE ABOUT. And guess what? You have to
 spent time to examine whether you care he/her or not.
 
 It's really boring to ask everyone you meet the same questions:
+
 "Do you play games?"
+
 "Do you like cats?"
+
 "Do you listen to electronic music?"
+
 "Do you draw silly stuff in your spare time?"
+
 "Do you program?"
+
 "Do you play dnd?"
 
+...
+
 "How about investigate a little before you meet someone face to face?"
+
 "How about check his/her steam library first?"
+
 "How about browse his/her bandcamp fan page first?"
 
 So I create knocknock. Knock before you enter, or just leave without a hassle.
@@ -39,36 +49,34 @@ So I create knocknock. Knock before you enter, or just leave without a hassle.
 Installation
 ----
 
-1. You need `Python3` and `pip`. You might want to use `virtualenv` as well.
+- You need `Python3` and `pip`. You might want to use `virtualenv` as well.
 
-2. Clone or download this repo.
+- Clone or download this repo.
 
-3. (if using `virtualenv`)
+- Install dependencies.
 ``` shell
+# If using `virtualenv`
 $ virtualenv venv && source ./venv/bin/activate
-```
 
-3. Install dependencies.
-``` shell
+# Then
 $ pip install -r ./requirements.txt
 ```
 
-4. Open `./knocknock` and put names you found into list named `accounts_to_test`
-   (I'm really sorry about this, I'll improve usability in the next release)
+- Open `./knocknock` and put names you found into list named `accounts_to_test`
+  (I'm really sorry about this, I'll improve usability in the next release)
 
-5. Run `knocknock`
+- Run `knocknock`
 ``` shell
 $ python3 ./knocknock
-```
 
-or
+# Or
 
-``` shell
 $ ./knocknock
 ```
 
 Result example
 ----
+
 ![result](./imgs/result.png)
 
 Contribution
@@ -99,7 +107,9 @@ License
 ----
 
 knocknock - knock before you enter
+
 This software is licensed under the [GPL v3 license][gpl].
+
 Copyright (C) 2016 TheKK<thumbd03803@gmail.com>
 
 [gpl]: http://www.gnu.org/copyleft/gpl.html
