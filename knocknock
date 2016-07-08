@@ -38,10 +38,9 @@ thread_handlers = []
 args = get_args()
 accounts_to_test = args.accounts
 
-thread_handlers = list(
-        map(lambda page: Thread(target=job_check_and_print, args=(page,)),
-            targetPages.all_pages)
-        )
+for page in targetPages.all_pages:
+    handler = Thread(target=job_check_and_print, args=(page,))
+    thread_handlers.append(handler)
 
 for handler in thread_handlers:
     handler.start()
