@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+import argparse
 import threading
+
 from threading import Thread, Lock
 from pprint import pprint
 
@@ -8,10 +10,11 @@ from termcolor import colored
 
 import targetPages
 
-accounts_to_test = ['katia_managon', 'theCryingCat']
-
-print_lock = Lock()
-thread_handlers = []
+def get_args():
+    parser = argparse.ArgumentParser(description='knock before you enter.')
+    parser.add_argument('accounts', metavar='N', type=str, nargs='+',
+                        help='account you\'d like to check')
+    return parser.parse_args()
 
 def job_check_and_print(page):
     result = page.check_result(accounts_to_test)
@@ -29,6 +32,11 @@ def job_check_and_print(page):
         print(text)
 
     print_lock.release()
+
+print_lock = Lock()
+thread_handlers = []
+args = get_args()
+accounts_to_test = args.accounts
 
 thread_handlers = list(
         map(lambda page: Thread(target=job_check_and_print, args=(page,)),
